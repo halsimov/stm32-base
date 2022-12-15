@@ -1,6 +1,7 @@
 .PHONY: all build build-container cmake format format-linux flash-stlink flash-jlink format-container shell image build-container clean clean-image clean-all
 ############################### Native Makefile ###############################
 
+
 PROJECT_NAME ?= firmware
 BUILD_DIR ?= build
 FIRMWARE := $(BUILD_DIR)/$(PROJECT_NAME).bin
@@ -50,7 +51,7 @@ format-linux: $(addsuffix .format-linux,$(FORMAT_LINUX))
 	$(if $(filter $(PLATFORM),Linux),dos2unix -q $<,)
 
 # Device specific!
-DEVICE ?= STM32F407VG
+DEVICE ?= STM32F302R8
 
 flash-st: build
 	st-flash --reset write $(FIRMWARE) 0x08000000

@@ -1,4 +1,5 @@
-/*
+# ! = Keeper
+/* 
 
 # GIT
 !.gitignore
@@ -6,11 +7,6 @@
 # Guides
 !README.md
 !/docs
-
-# NIX
-!*.nix
-!.envrc
-!flake.lock
 
 # TOOLS
 !Makefile
@@ -21,15 +17,9 @@
 !docker-compose.yml
 !.dockerignore
 
-# EXAMPLE
+# Sources
 !Core
 !Drivers
 !CubeMX
 !Project
 !STM32-project-template.ioc
-!/.vscode
-/.vscode/*
-!/.vscode/tasks.json
-!/.vscode/c_cpp_properties.json
-!/.vscode/launch.json
-!/.vscode/settings.json

@@ -18,16 +18,16 @@ endif()
 message("Build type: ${CMAKE_BUILD_TYPE}")
 
 # Set microcontroller information
-set(MCU_FAMILY STM32F4xx)
-set(MCU_MODEL STM32F407xx)
+set(MCU_FAMILY STM32F3xx)
+set(MCU_MODEL STM32F302x8)
 set(CPU_PARAMETERS
     -mcpu=cortex-m4
     -mthumb
     -mfpu=fpv4-sp-d16
     -mfloat-abi=hard)
 
-set(STARTUP_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/startup_stm32f407xx.s)
-set(MCU_LINKER_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/STM32F407VGTx_FLASH.ld)
+set(STARTUP_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/startup_stm32f302x8.s)
+set(MCU_LINKER_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/STM32F302R8Tx_FLASH.ld)
 
 ###############################################################################
 set(EXECUTABLE ${CMAKE_PROJECT_NAME})
@@ -90,7 +90,7 @@ target_compile_options(${EXECUTABLE} PRIVATE
     $<$<COMPILE_LANGUAGE:CXX>:
         -Wconversion
         -Wno-volatile
-        -Wold-style-cast
+        #-Wold-style-cast
         -Wuseless-cast
         -Wsuggest-override>
     $<$<CONFIG:Debug>:-Og -g3 -ggdb>

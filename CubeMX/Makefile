@@ -38,28 +38,28 @@ BUILD_DIR = build
 C_SOURCES =  \
 ../Core/Src/main.c \
 ../Core/Src/gpio.c \
-../Core/Src/stm32f4xx_it.c \
-../Core/Src/stm32f4xx_hal_msp.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c \
-../Core/Src/system_stm32f4xx.c  
+../Core/Src/stm32f3xx_it.c \
+../Core/Src/stm32f3xx_hal_msp.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ramfunc.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma_ex.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c \
+../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.c \
+../Core/Src/system_stm32f3xx.c  
 
 # ASM sources
 ASM_SOURCES =  \
-startup_stm32f407xx.s
+startup_stm32f302x8.s
 
 
 #######################################
@@ -113,9 +113,9 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -I../Core/Inc \
--I../Drivers/STM32F4xx_HAL_Driver/Inc \
--I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy \
--I../Drivers/CMSIS/Device/ST/STM32F4xx/Include \
+-I../Drivers/STM32F3xx_HAL_Driver/Inc \
+-I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy \
+-I../Drivers/CMSIS/Device/ST/STM32F3xx/Include \
 -I../Drivers/CMSIS/Include
 
 
@@ -137,7 +137,7 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 # LDFLAGS
 #######################################
 # link script
-LDSCRIPT = STM32F407VGTx_FLASH.ld
+LDSCRIPT = STM32F302R8Tx_FLASH.ld
 
 # libraries
 LIBS = -lc -lm -lnosys 
