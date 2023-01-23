@@ -24,7 +24,8 @@ set(CPU_PARAMETERS
     -mcpu=cortex-m4
     -mthumb
     -mfpu=fpv4-sp-d16
-    -mfloat-abi=hard)
+    -mfloat-abi=hard
+)
 
 set(STARTUP_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/startup_stm32f302x8.s)
 set(MCU_LINKER_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/STM32F302R8Tx_FLASH.ld)
@@ -101,9 +102,9 @@ target_link_options(${EXECUTABLE} PRIVATE
     ${CPU_PARAMETERS}
     -Wl,-Map=${CMAKE_PROJECT_NAME}.map
     -Wl,--start-group
-    -lc
-    -lm
-    -lstdc++
+    -lc -lm -lstdc++
+        # -lnosys
+    -Wl,-u,vfprintf
     -Wl,--end-group
     -Wl,--print-memory-usage)
 ###############################################################################

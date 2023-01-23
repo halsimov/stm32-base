@@ -2,6 +2,7 @@ set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 
 set(TOOLCHAIN_PREFIX arm-none-eabi-)
+# consider adding --specs=nano.specs or --specs=nosys.specs
 set(CMAKE_C_FLAGS_INIT
     "-fdata-sections -ffunction-sections --specs=nano.specs -Wl,--gc-sections")
 set(CMAKE_CXX_FLAGS_INIT

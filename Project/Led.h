@@ -6,19 +6,23 @@
 namespace project
 {
 
-class Led
-{
-public:
-    explicit Led(GPIO_TypeDef* t_gpio, uint16_t t_pin);
-    void on();
-    void off();
-    void toggle();
-    auto state() -> bool;
+    class Led
+    {
+    public:
+        explicit Led(GPIO_TypeDef* t_gpio, uint16_t t_pin);
 
-private:
-    GPIO_TypeDef* gpio;
-    uint16_t pin;
-};
+        void on();
+
+        void off();
+
+        void toggle();
+
+        auto state() -> bool;
+
+    private:
+        GPIO_TypeDef* gpio;
+        uint16_t pin;
+    };
 
 } // namespace project
 
